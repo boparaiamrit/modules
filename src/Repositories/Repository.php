@@ -67,7 +67,7 @@ abstract class Repository implements RepositoryContract
     public function getManifest($slug)
     {
         if (! is_null($slug)) {
-            $module     = str_slug($slug);
+            $module     = $slug;
             $path       = $this->getManifestPath($module);
             $contents   = $this->files->get($path);
             $collection = collect(json_decode($contents, true));
